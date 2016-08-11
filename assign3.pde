@@ -42,6 +42,18 @@ void draw(){
     image(backgroundFormerImg,b,0);
     image(backgroundLaterImg,b-640,0);
     image(backgroundFormerImg,b-1280,0);
+//fighter    
+    image(fighterImg, x, y);
+    if (upPressed) {y -= speed;}
+    if (downPressed) {y += speed;}
+    if (leftPressed) {x -= speed;}
+    if (rightPressed) {x += speed;}   
+//fighter boundary detection
+    if (x < 0){x = 0;}
+    if (x > width-61){x = width - 61;}
+    if (y < 0){y = 0;}
+    if (y > height-61){y = height - 61;}    
+
 //treasure    
     image(treasureImg,tX,tY); 
     if(x+51 >= tX && x <= tX+41){
@@ -50,18 +62,6 @@ void draw(){
          tY = floor(random(400));
       }
     } 
-//fighter    
-    image(fighterImg, x, y);
-    if (upPressed) {y -= speed;}
-    if (downPressed) {y += speed;}
-    if (leftPressed) {x -= speed;}
-    if (rightPressed) {x += speed;}   
-//fighter boundary detection
-  if (x < 0){x = 0;}
-  if (x > width-61){x = width - 61;}
-  if (y < 0){y = 0;}
-  if (y > height-61){y = height - 61;}    
-
 //enemy    
   for(int i = 0; i < 5; i++){
     if(circle % 3 == 0){
