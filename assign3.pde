@@ -50,6 +50,18 @@ void draw(){
          tY = floor(random(400));
       }
     } 
+//fighter    
+    image(fighterImg, x, y);
+    if (upPressed) {y -= speed;}
+    if (downPressed) {y += speed;}
+    if (leftPressed) {x -= speed;}
+    if (rightPressed) {x += speed;}   
+//fighter boundary detection
+  if (x < 0){x = 0;}
+  if (x > width-61){x = width - 61;}
+  if (y < 0){y = 0;}
+  if (y > height-61){y = height - 61;}    
+
 //enemy    
   for(int i = 0; i < 5; i++){
     if(circle % 3 == 0){
@@ -83,17 +95,7 @@ void draw(){
       eY = random(400);
     }
   }
-//fighter    
-    image(fighterImg, x, y);
-    if (upPressed) {y -= speed;}
-    if (downPressed) {y += speed;}
-    if (leftPressed) {x -= speed;}
-    if (rightPressed) {x += speed;}   
-//fighter boundary detection
-  if (x < 0){x = 0;}
-  if (x > width-61){x = width - 61;}
-  if (y < 0){y = 0;}
-  if (y > height-61){y = height - 61;}
+
 //blood    
     fill(#ff0000);
     rect(8, 4, 200, 17);
