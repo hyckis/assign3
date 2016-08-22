@@ -91,7 +91,7 @@ void draw(){
     eX += 1;
     if(eX >= width){
       circle++;
-      eX = 0;
+      eX = -305;
       eY = random(400);
     }
   }
